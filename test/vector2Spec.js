@@ -34,17 +34,35 @@ describe("Vector2 test suite:", function() {
 		});
 	});
 
-	it("getAngle", function() {
-		expect(a.getAngle()).toBe(0);
-		expect(b.getAngle()).toBe(1.1071487177940904);
-		expect(new Vector2(1, -1).getAngle()).toBe(5.497787143782138);
+	describe("angle", function() {
+		it("get", function() {
+			expect(a.angle()).toBe(0);
+			expect(b.angle()).toBe(1.1071487177940904);
+			expect(new Vector2(1, -1).angle()).toBe(5.497787143782138);
+		});
+
+
+		it("set", function() {
+			b.angle(0);
+			expect(b).toBeVector(Math.sqrt(5), 0);
+			expect(c.angle(Math.PI/4)).toBeVector(Math.sqrt(13)*Math.sqrt(2)/2, Math.sqrt(13)*Math.sqrt(2)/2);
+		});
 	});
 
-	it("getAngleDeg", function() {
-		expect(a.getAngleDeg()).toBe(0);
-		expect(b.getAngleDeg()).toBe(63.43494882292201);
-		expect(new Vector2(1, -1).getAngleDeg()).toBe(315);
+	describe("angleDeg", function() {
+		it("get", function() {
+			expect(a.angleDeg()).toBe(0);
+			expect(b.angleDeg()).toBe(63.43494882292201);
+			expect(new Vector2(1, -1).angleDeg()).toBe(315);
+		});
+
+		it("set", function() {
+			b.angleDeg(0);
+			expect(b).toBeVector(Math.sqrt(5), 0);
+			expect(c.angleDeg(45)).toBeVector(Math.sqrt(13)*Math.sqrt(2)/2, Math.sqrt(13)*Math.sqrt(2)/2);
+		});
 	});
+	
 
 	it("copy/clone", function() {
 		var d = a.copy();
@@ -149,17 +167,6 @@ describe("Vector2 test suite:", function() {
 		expect(b.scale(1,-1)).toBeVector(-1, 2);
 	});
 
-	it("setAngle", function() {
-		b.setAngle(0);
-		expect(b).toBeVector(Math.sqrt(5), 0);
-		expect(c.setAngle(Math.PI/4)).toBeVector(Math.sqrt(13)*Math.sqrt(2)/2, Math.sqrt(13)*Math.sqrt(2)/2);
-	});
-
-	it("setAngleDeg", function() {
-		b.setAngleDeg(0);
-		expect(b).toBeVector(Math.sqrt(5), 0);
-		expect(c.setAngleDeg(45)).toBeVector(Math.sqrt(13)*Math.sqrt(2)/2, Math.sqrt(13)*Math.sqrt(2)/2);
-	});
 
 	it("setPolar", function() {
 		b.setPolar(0, 1);

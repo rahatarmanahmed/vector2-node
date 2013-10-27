@@ -29,6 +29,33 @@ Vector2.prototype.add = function(x, y) {
 	return this;
 };
 
+// ## angle
+// ### angle()
+// Returns the angle in radians of this vector
+// relative to the x-axis (counter-clockwise)
+// in the range 0 to 2 * PI.
+// ### angle(radians)
+// Rotates this vector to the given angle in radians.
+// Returns this vector for chaining.
+Vector2.prototype.angle = function(rad) {
+	if(rad !== undefined)
+		return this.set(this.length(), 0).rotate(rad);
+	var angle = Math.atan2(this.y, this.x);
+	if(angle < 0) angle += Math.PI*2;
+	return angle;
+};
+
+// ## angleDeg
+// ### angleDeg()
+// Same as angle() but in degrees.
+// ### angleDeg(degrees)
+// Same as angle(radians) but in degrees.
+Vector2.prototype.angleDeg = function(deg) {
+	if(deg !== undefined)
+		return this.angle(deg / 180 * Math.PI);
+	return this.angle() * 180 / Math.PI;
+};
+
 // ## clone()
 // ## copy()
 // Returns a new identical Vector2.
@@ -109,22 +136,6 @@ Vector2.prototype.equals = function(x, y, epsilon) {
 		return false;
 };
 
-// ## getAngle()
-// Returns the angle in radians of this vector
-// relative to the x-axis (counter-clockwise)
-// in the range 0 to 2 * PI.
-Vector2.prototype.getAngle = function() {
-	var angle = Math.atan2(this.y, this.x);
-	if(angle < 0) angle += Math.PI*2;
-	return angle;
-};
-
-// ## getAngleDeg()
-// Same as getAngle, but in degrees.
-Vector2.prototype.getAngleDeg = function() {
-	return this.getAngle() * 180 / Math.PI;
-};
-
 // ## length()
 // Returns the length of this vector.
 Vector2.prototype.length = function() {
@@ -194,19 +205,6 @@ Vector2.prototype.set = function(x, y) {
 		this.y = y || 0;
 	}
 	return this;
-};
-
-// ## setAngle(radians)
-// Rotates this vector to the given angle in radians.
-// Returns this vector for chaining.
-Vector2.prototype.setAngle = function(rad) {
-	return this.set(this.length(), 0).rotate(rad);
-};
-
-// ## setAngleDeg(degrees)
-// Same as setAngle but in degrees.
-Vector2.prototype.setAngleDeg = function(deg) {
-	return this.setAngle(deg / 180 * Math.PI);
 };
 
 // ## setPolar(radians, length)
