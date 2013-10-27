@@ -1,7 +1,8 @@
 // # Vector2
 // An object representing a 2D vector.
-//
-// Written by Rahat Ahmed.
+// Based on the [Vector2 class from LibGDX.](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html)
+
+// Written by [Rahat Ahmed](http://rahatah.me/d).
 
 // ## Vector2(Vector2)
 // ## Vector2(x, y)
