@@ -1,5 +1,5 @@
 {
-  "name": "vector2",
+  "name": "vector2-node",
   "version": "0.0.1",
   "description": "An object representing a 2D vector.",
   "main": "index.js",
