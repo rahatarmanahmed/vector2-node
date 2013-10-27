@@ -1,5 +1,7 @@
 // # Vector2
 // An object representing a 2D vector.
+//
+// Written by Rahat Ahmed.
 
 // ## Vector2(Vector2)
 // ## Vector2(x, y)
