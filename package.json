@@ -1,0 +1,19 @@
+{
+  "name": "vector2",
+  "version": "0.0.1",
+  "description": "An object representing a 2D vector.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/jasmine-node/lib/jasmine-node/cli.js test/"
+  },
+  "keywords": [
+    "math",
+    "vector",
+    "2d"
+  ],
+  "author": "Rahat Ahmed",
+  "license": "EPL",
+  "devDependencies": {
+    "jasmine-node": "~1.11.0"
+  }
+}
