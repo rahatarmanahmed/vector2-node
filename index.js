@@ -119,7 +119,7 @@ Vector2.prototype.dot = function(x, y) {
 // ### equals(x, y)
 // Returns true if this vector equals given x, y components.
 // ### equals(x, y, epsilon)
-// Returns true if this vector equasl given x, y components within an epsilon.
+// Returns true if this vector equals given x, y components within an epsilon.
 Vector2.prototype.equals = function(x, y, epsilon) {
 	
 	if(x instanceof Vector2)
