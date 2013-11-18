@@ -1,6 +1,6 @@
 {
   "name": "vector2-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An object representing a 2D vector.",
   "main": "index.js",
   "scripts": {
